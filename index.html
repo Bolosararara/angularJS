@@ -1,18 +1,16 @@
 <!DOCTYPE html>
-<html ng-app = "calculaterApp">
+<html ng-app = "LunchCheck">
   <head>
     <meta charset="utf-8">
     <script src="angular.min.js"></script>
     <script src="app.js">
 
     </script>
-    <title>test file</title>
+    <title>Lunch Check</title>
   </head>
-  <body ng-controller = "calController">
-    <input type="number" ng-model = "a" ></input>
-    <input type="number" ng-model = "b"></input>
-    <div>{{a+b}}
-    </div>
-    <h1>{{message}}</h1>
+  <body ng-controller = "LunchCheckController">
+    <input ng-model = "items" ></input>
+    <button ng-click = "checkIfTooMuch()">Check If Too Much</button>
+    <div >{{message}}</div>
   </body>
 </html>

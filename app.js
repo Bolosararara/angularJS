@@ -1,9 +1,15 @@
-angular.module('calculaterApp',[])
-.controller("calController",function($scope){
-  findSum = function(a,b){
-    return Number(a)+Number(b);
+angular.module('LunchCheck',[])
+.controller("LunchCheckController",function($scope){
+  //function to perform action on button click
+  $scope.checkIfTooMuch = function(){
+    var spiltRegExp = /\s*,\s*/;
+    var itemArr = $scope.items.split(spiltRegExp);
+    if (itemArr.length >3){
+      $scope.message = "Too much!";
+    }
+    else{
+      $scope.message = "Enjoy!";
+    }
   }
-  $scope.message = "shashi is back";
-  $scope.sum = findSum($scope.a,$scope.b);
 
 });
