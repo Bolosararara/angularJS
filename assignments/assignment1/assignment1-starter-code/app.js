@@ -7,7 +7,8 @@
     $scope.errorMessage = "";
     //function to perform action on button click
     $scope.checkIfTooMuch = function(){
-      if($scope.items === undefined){
+      if($scope.items === undefined||$scope.items ===""){
+        $scope.message = null;
         $scope.errorMessage = "enter food list first";
         return;
       }
