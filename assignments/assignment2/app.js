@@ -19,6 +19,9 @@
       if(list.length === 0){
         $scope.ToBuyListEmpty = true;
       }
+      else{
+        $scope.ToBuyListEmpty = false;
+      }
       return list;
     };
   };
@@ -31,6 +34,9 @@
       var list = $shoppingService.getAlradyBoughtList();
       if(list.length === 0){
       $scope.AlradyBoughtListEmpty = true;
+      }
+      else{
+        $scope.AlradyBoughtListEmpty = false;
       }
       return list;
       };

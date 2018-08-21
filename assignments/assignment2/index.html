@@ -13,6 +13,7 @@
     <div class = "main">
         <div class = "block" ng-controller = "checkOffAppctrl1">
           <h3> To Buy </h3>
+          <div ng-if ="ToBuyListEmpty">Everything is bought!</div>
           <div ng-repeat = "item in getToBuyList()">
             <div>buy {{item.quantity}} {{item.name}}.
               <button ng-click = "bought(item.quantity,item.name,$index)">Bought</button>
@@ -21,6 +22,7 @@
         </div>
         <div class = "block" ng-controller = "checkOffAppctrl2">
           <h3>Already Bought</h3>
+          <div ng-if ="AlradyBoughtListEmpty">Nothing bought yet</div>
           <div ng-repeat = "item in getAlradyBoughtList()">
             <div>
               Bought {{item.quantity}} {{item.name}}.
