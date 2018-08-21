@@ -3,7 +3,12 @@
 'use strict';
 
   angular.module('LunchCheck',[])
-  .controller("LunchCheckController",function($scope){
+  .controller('LunchCheckController',ctrl);
+
+    ctrl.$inject = ['$scope'];
+    function ctrl ($scope){
+
+    console.log($scope);
     $scope.errorMessage = "";
     $scope.items = "";
     //function to perform action on button click
@@ -25,6 +30,8 @@
       }
     }
 
-  });
+
+
+  };
 
 })();

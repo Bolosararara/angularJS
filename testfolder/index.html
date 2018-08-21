@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app = "filterApp">
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js">
+
+    </script>
+    <title>Lunch Check</title>
+  </head>
+  <body ng-controller = "filterAppController">
+  <div>real message {{message}} </div>
+  <div>message using filter in html file {{message | textChange:'is':'is came'}} </div>
+  <div>message using filter in html file {{updated |textChange:'back':'back again'}}</div>
+  <button ng-click = "message = findEven()">only even</button>
+  <div ng-repeat = "number in array">{{number}},</div></br>
+  </body>
+</html>
