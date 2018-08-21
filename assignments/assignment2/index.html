@@ -11,19 +11,19 @@
   </head>
   <body>
     <div class = "main">
-        <div class = "block" ng-controller = "checkOffAppctrl1">
+        <div class = "block" ng-controller = "checkOffAppctrl1 as ctrl1">
           <h3> To Buy </h3>
-          <div ng-if ="ToBuyListEmpty">Everything is bought!</div>
-          <div ng-repeat = "item in getToBuyList()">
+          <div ng-if ="ctrl1.ToBuyListEmpty">Everything is bought!</div>
+          <div ng-repeat = "item in ctrl1.getToBuyList()">
             <div>buy {{item.quantity}} {{item.name}}.
-              <button ng-click = "bought(item.quantity,item.name,$index)">Bought</button>
+              <button ng-click = "ctrl1.bought(item.quantity,item.name,$index)">Bought</button>
             </div>
           </div>
         </div>
-        <div class = "block" ng-controller = "checkOffAppctrl2">
+        <div class = "block" ng-controller = "checkOffAppctrl2 as ctrl2">
           <h3>Already Bought</h3>
-          <div ng-if ="AlradyBoughtListEmpty">Nothing bought yet</div>
-          <div ng-repeat = "item in getAlradyBoughtList()">
+          <div ng-if ="ctrl2.AlradyBoughtListEmpty">Nothing bought yet</div>
+          <div ng-repeat = "item in ctrl2.getAlradyBoughtList()">
             <div>
               Bought {{item.quantity}} {{item.name}}.
             </div>

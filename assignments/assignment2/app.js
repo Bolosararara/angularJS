@@ -7,36 +7,37 @@
   .controller('checkOffAppctrl2',ctrl2)
   .service('shoppingService',shoppingService);
 
-  ctrl1.$inject = ['$scope','shoppingService'];
-  function ctrl1($scope,$shoppingService){
-
-    $scope.bought = function(quantity,itemName,index){
+  ctrl1.$inject = ['shoppingService'];
+  function ctrl1($shoppingService){
+    var ctrl = this;
+    ctrl.bought = function(quantity,itemName,index){
       $shoppingService.bought(quantity,itemName);
       $shoppingService.removeItem(index);
     }
-    $scope.getToBuyList = function(){
+    ctrl.getToBuyList = function(){
       var list = $shoppingService.getToBuyList();
       if(list.length === 0){
-        $scope.ToBuyListEmpty = true;
+        ctrl.ToBuyListEmpty = true;
       }
       else{
-        $scope.ToBuyListEmpty = false;
+        ctrl.ToBuyListEmpty = false;
       }
       return list;
     };
   };
 
-  ctrl2.$inject = ['$scope','shoppingService'];
+  ctrl2.$inject = ['shoppingService'];
 
-  function ctrl2($scope,$shoppingService){
+  function ctrl2($shoppingService){
 
-    $scope.getAlradyBoughtList = function(){
+    var ctrl = this;
+    ctrl.getAlradyBoughtList = function(){
       var list = $shoppingService.getAlradyBoughtList();
       if(list.length === 0){
-      $scope.AlradyBoughtListEmpty = true;
+      ctrl.AlradyBoughtListEmpty = true;
       }
       else{
-        $scope.AlradyBoughtListEmpty = false;
+        ctrl.AlradyBoughtListEmpty = false;
       }
       return list;
       };
