@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html ng-app = "promis">
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js">
+
+    </script>
+    <title>Lunch Check</title>
+  </head>
+  <body ng-controller = "PromisCtrl as pro">
+  <input type = "number" ng-model = "pro.number" ng-keyup = "pro.showMessageFun()" />
+  <div ng-if = "pro.showMessage">{{pro.message}}</div>
+  </body>
+</html>
