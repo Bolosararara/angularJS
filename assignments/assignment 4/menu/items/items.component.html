@@ -1,3 +1,8 @@
 <ul ng-repeat = 'item in $ctrl.itemslist'>
   <li>{{item.name}}</li>
+    <ul>
+      <li>description : {{item.description}}</li>
+      <li>price for small : {{item.price_small}}</li>
+      <li>price for large : {{item.price_large}}</li>
+    </ul>
 </ul>
