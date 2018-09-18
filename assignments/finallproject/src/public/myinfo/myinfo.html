@@ -1,0 +1,24 @@
+<div class="login">
+  <h1 class="text-center">my info</h1>
+  <span ng-if="!myinfoctrl.myInfoStatus">Not Signed Up Yet. Sign up Now!</span>
+  <div ng-if="myinfoctrl.myInfoStatus">
+    <div class="form-group">
+      <label>First name :</label><label>{{myinfoctrl.firstName}}</label>
+    </div>
+    <div class="form-group">
+      <label>Last name :</label><label>{{myinfoctrl.lastName}}</label>
+    </div>
+    <div class="form-group">
+      <label>Email address :</label><label>{{myinfoctrl.emailAddress}}</label>
+    </div>
+    <div class="form-group">
+      <label>Phone number :</label><label>{{myinfoctrl.phoneNumber}}</label>
+    </div>
+    <div class="form-group">
+      <label>Menu number :</label><label>{{myinfoctrl.menuNumber}}</label>
+    </div>
+    </div>
+  <div ng-if="loginCtrl.error" class="login-error text-center">
+    {{loginCtrl.error}}
+  </div>
+</div>

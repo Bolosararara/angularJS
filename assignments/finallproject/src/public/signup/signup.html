@@ -1,0 +1,57 @@
+<div class="login">
+  <h1 class="text-center">sing up</h1>
+  <form name = "signup" novalidate>
+    <div class="form-group">
+      <label>first name</label>
+      <input class="form-control" name = "usefirstname" type="text" ng-model="signUpCtrl.firstName" autofocus required>
+      <span
+      style = "color:red"
+      ng-if="(signup.usefirstname.$error.required && signup.usefirstname.$touched)">
+      * user name is requried field
+    </span>
+    </div>
+    <div class="form-group">
+      <label>last name</label>
+      <input class="form-control" name = "lastname"  type="text" ng-model="signUpCtrl.lastName" autofocus required>
+      <span
+        style = "color:red"
+      ng-if="(signup.lastname.$error.required && signup.lastname.$touched)">
+        *user last name is requried field
+    </span>
+    </div>
+    <div class="form-group">
+      <label>email address</label>
+      <input class="form-control" name = "ueremail" type="email" ng-model="signUpCtrl.emailAddress" autofocus >
+      <span
+        style = "color:red"
+        ng-if="signup.ueremail.$invalid && signup.ueremail.$touched">
+        * invalid email addres
+      </span>
+    </div>
+    <div class="form-group">
+      <label>phone number</label>
+      <input class="form-control"
+      name = "phonenumber"
+      ng-model="signUpCtrl.phoneNumber"
+      pattern="(\d{3})-(\d{3})-(\d{4})">
+      <span
+        style = "color:red"
+        ng-if="signup.phonenumber.$invalid  && signup.phonenumber.$touched">
+        * invalid phone number (use ###-###-####)
+      </span>
+    </div>
+    <div class="form-group">
+      <label>menu number</label>
+      <input class="form-control" type="text" ng-model="signUpCtrl.menuNumber" autofocus>
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary" ng-disabled="signup.$invalid" ng-click="signUpCtrl.onSubmit()">Submit </button>
+    </div>
+  </form>
+  <div ng-if ="signUpCtrl.Submitedflag">
+    Your information has been saved.(not able to upload project on heroku )
+  </div>
+  <div ng-if="loginCtrl.error" class="login-error text-center">
+    {{loginCtrl.error}}
+  </div>
+</div>
