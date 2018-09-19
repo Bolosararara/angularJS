@@ -44,12 +44,16 @@
       <label>menu number</label>
       <input class="form-control" type="text" ng-model="signUpCtrl.menuNumber" autofocus>
     </div>
+    <span
+      ng-if="signUpCtrl.showmessage">
+      {{signUpCtrl.message}}
+    </span>
     <div class="form-group">
       <button class="btn btn-primary" ng-disabled="signup.$invalid" ng-click="signUpCtrl.onSubmit()">Submit </button>
     </div>
   </form>
   <div ng-if ="signUpCtrl.Submitedflag">
-    Your information has been saved.(not able to upload project on heroku )
+    Your information has been saved.
   </div>
   <div ng-if="loginCtrl.error" class="login-error text-center">
     {{loginCtrl.error}}
