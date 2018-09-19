@@ -30,16 +30,10 @@ function signUpController(signup,MenuService) {
     console.log(info);
     signup.storeInfo(info);
     if($ctrl.menuNumber !== ""){
-      MenuService.getMenuItems($ctrl.menuNumber).then(function(responce){
+      MenuService.getALLMenuItems($ctrl.menuNumber).then(function(responce){
         $ctrl.showmessage= true;
-        console.log(responce.menu_items.length);
-        if(responce.menu_items.length !== 0){
         $ctrl. message ="valid menu number";
-      }
-      else{
-          $ctrl. message ="invalid menu number";
-      }
-      },function(){
+        },function(){
         $ctrl.showmessage= true;
           $ctrl. message ="invalid menu number";
       });

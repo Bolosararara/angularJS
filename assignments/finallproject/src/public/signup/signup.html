@@ -2,7 +2,7 @@
   <h1 class="text-center">sing up</h1>
   <form name = "signup" novalidate>
     <div class="form-group">
-      <label>first name</label>
+      <label>*first name</label>
       <input class="form-control" name = "usefirstname" type="text" ng-model="signUpCtrl.firstName" autofocus required>
       <span
       style = "color:red"
@@ -11,8 +11,8 @@
     </span>
     </div>
     <div class="form-group">
-      <label>last name</label>
-      <input class="form-control" name = "lastname"  type="text" ng-model="signUpCtrl.lastName" autofocus required>
+      <label>*last name</label>
+      <input class="form-control" name = "lastname"  type="text" ng-model="signUpCtrl.lastName" required>
       <span
         style = "color:red"
       ng-if="(signup.lastname.$error.required && signup.lastname.$touched)">
@@ -21,7 +21,7 @@
     </div>
     <div class="form-group">
       <label>email address</label>
-      <input class="form-control" name = "ueremail" type="email" ng-model="signUpCtrl.emailAddress" autofocus >
+      <input class="form-control" name = "ueremail" type="email" ng-model="signUpCtrl.emailAddress" >
       <span
         style = "color:red"
         ng-if="signup.ueremail.$invalid && signup.ueremail.$touched">
@@ -41,8 +41,13 @@
       </span>
     </div>
     <div class="form-group">
-      <label>menu number</label>
-      <input class="form-control" type="text" ng-model="signUpCtrl.menuNumber" autofocus>
+      <label>*menu number</label>
+      <input class="form-control" name ="menunumber"  type="text" ng-model="signUpCtrl.menuNumber" required>
+      <span
+        style = "color:red"
+      ng-if="(signup.menunumber.$error.required && signup.menunumber.$touched)">
+        *menu number name is requried field
+    </span>
     </div>
     <span
       ng-if="signUpCtrl.showmessage">
