@@ -1,6 +1,6 @@
 <div class="login">
   <h1 class="text-center">my info</h1>
-  <span ng-if="!myinfoctrl.myInfoStatus">Not Signed Up Yet. Sign up Now!</span>
+  <span ng-if="!myinfoctrl.myInfoStatus">Not Signed Up Yet. <a ui-sref = "public.login">Sign up Now!</a></span>
   <div ng-if="myinfoctrl.myInfoStatus">
     <div class="form-group">
       <label>First name :</label><label>{{myinfoctrl.firstName}}</label>
