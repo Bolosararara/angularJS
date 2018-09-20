@@ -24,6 +24,7 @@ function myinfoController(signup) {
   $ctrl.phoneNumber=info.phoneNumber;
   $ctrl.emailAddress=info.emailAddress;
   $ctrl.menuNumber=info.menuNumber;
+  $ctrl.menuItem=info.menuItem;
 
     console.log("in controllerAs");
     console.log(info);

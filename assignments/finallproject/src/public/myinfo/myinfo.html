@@ -4,6 +4,10 @@
     <a ui-sref = "public.login">Sign up Now!</a>
   </span>
   <div ng-if="myinfoctrl.myInfoStatus">
+
+    <menu-item  menu-item="myinfoctrl.menuItem">
+    </menu-item>
+
     <div class="form-group">
       <label>First name :</label><label>{{myinfoctrl.firstName}}</label>
     </div>
@@ -16,11 +20,5 @@
     <div class="form-group">
       <label>Phone number :</label><label>{{myinfoctrl.phoneNumber}}</label>
     </div>
-    <div class="form-group">
-      <label>Menu number :</label><label>{{myinfoctrl.menuNumber}}</label>
     </div>
-    </div>
-  <div ng-if="loginCtrl.error" class="login-error text-center">
-    {{loginCtrl.error}}
-  </div>
 </div>

@@ -19,6 +19,8 @@ function signUpController(signup,MenuService) {
   $ctrl.menuNumber="";
 
   $ctrl.onSubmit = function(){
+    $ctrl.showmessage= false;
+    $ctrl.Submitedflag = false;
   var  info = {
       firstName:$ctrl.firstName,
       lastName:$ctrl.lastName,
@@ -28,17 +30,20 @@ function signUpController(signup,MenuService) {
     };
     console.log("in controllerAs");
     console.log(info);
-    signup.storeInfo(info);
+
     if($ctrl.menuNumber !== ""){
       MenuService.getALLMenuItems($ctrl.menuNumber).then(function(responce){
-        $ctrl.showmessage= true;
+        $ctrl.menuItem = responce;
         $ctrl. message ="valid menu number";
+        console.log($ctrl.menuItem);
+        info.menuItem = $ctrl.menuItem;
+        signup.storeInfo(info);
+        $ctrl.Submitedflag = true;
         },function(){
         $ctrl.showmessage= true;
           $ctrl. message ="invalid menu number";
       });
     }
-    $ctrl.Submitedflag = true;
   };
 };
 
